@@ -42,3 +42,30 @@ for(var i=0;i<items.length;i++){
     items[i].style.fontWeight='bold';
     items[i].style.color='black';
 }
+
+//QuerySelector
+var header=document.querySelector('#main-header');
+header.style.borderBottom='10px solid beige';
+
+var input = document.querySelector('input');
+input.value='Hello world';
+
+var submit =document.querySelector('input[type="submit"]');
+submit.value='SEND';
+
+var lastItem=document.querySelector('.list-group-item:last-child');
+var secondItem=document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor='green';
+
+var thirdItem=document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.display='none';
+
+//Query Selector All
+
+var secondItem=document.querySelectorAll('.list-group-item:nth-child(2)')
+secondItem[0].style.color='green';
+
+var odd=document.querySelectorAll('.list-group-item:nth-child(odd)')
+for(var i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor='green';
+}
