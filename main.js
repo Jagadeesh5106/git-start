@@ -122,12 +122,23 @@ function storeData(e){
 
   var deleteBtn=document.createElement('button')
   deleteBtn.textContent="Delete"
+  var editBtn =document.createElement('button');
+  editBtn.textContent='Edit'
+
   user.appendChild(deleteBtn);
+  user.appendChild(editBtn);
+
   deleteBtn.addEventListener("click",deleteDetails);
   function deleteDetails(event){
     event.preventDefault();
     users.removeChild(user);
     localStorage.removeItem(email.value);
+ }
+ editBtn.addEventListener("click",editDetails);
+ function editDetails(event){
+  deleteDetails(event);
+  Name.value=detailsObj.name;
+  email.value=detailsObj.email;
  }
 users.appendChild(user);
 
