@@ -104,10 +104,7 @@
 var Name=document.getElementById("name");
 var email=document.getElementById("email")
 var form=document.getElementById("my-form");
-
-var Name=document.getElementById("name");
-var email=document.getElementById("email")
-var form=document.getElementById("my-form");
+var users=document.getElementById("users")
 
 form.addEventListener("submit",storeData);
 function storeData(e){
@@ -117,6 +114,23 @@ function storeData(e){
     email:email.value
   }
   localStorage.setItem(email.value,JSON.stringify(detailsObj));
+  var user=document.createElement('li');
+  user.className="item";
+  user.appendChild(document.createTextNode(Name.value+" "+email.value));
+  user.style.display='flex';
+  user.style.flexDirection='row';
+
+  var deleteBtn=document.createElement('button')
+  deleteBtn.textContent="Delete"
+  user.appendChild(deleteBtn);
+  deleteBtn.addEventListener("click",deleteDetails);
+  function deleteDetails(event){
+    event.preventDefault();
+    users.removeChild(user);
+    localStorage.removeItem(email.value);
+ }
+users.appendChild(user);
+
 }
 // console.log(JSON.parse(localStorage.getItem("details")))
 
