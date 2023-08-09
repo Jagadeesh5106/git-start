@@ -105,6 +105,10 @@ var Name=document.getElementById("name");
 var email=document.getElementById("email")
 var form=document.getElementById("my-form");
 
+var Name=document.getElementById("name");
+var email=document.getElementById("email")
+var form=document.getElementById("my-form");
+
 form.addEventListener("submit",storeData);
 function storeData(e){
   e.preventDefault();
@@ -112,7 +116,7 @@ function storeData(e){
     name:Name.value,
     email:email.value
   }
-  localStorage.setItem("details",JSON.stringify(detailsObj));
+  localStorage.setItem(email.value,JSON.stringify(detailsObj));
 }
-console.log(JSON.parse(localStorage.getItem("details")))
+// console.log(JSON.parse(localStorage.getItem("details")))
 
